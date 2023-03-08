@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <div style="margin-top: 50px" class="ui container">
+        <h1 class="ui center aligned header">Password Generator</h1>
+        <form action="/generate" method="post">
+            <h2>Length</h2>
+            <input type="number" name="Length" step="any" min="1" value = 1 placeholder="Length">
+
+
+            <h2>Special Charchter</h2>
+            <input type="number" name="Special Charchter" step="any" min="0" value = 0 placeholder="Special Charchter">
+            <br>
+
+            
+            <h2>Numerics</h2>
+            <input type="number" name="Numeric" step="any" min="0" value = 0 placeholder="Numeric">
+            <br>
+            <br>
+            <input class="ui green button" type="submit" value="Generate" id="generate">
+            <br>
+            {% for message in get_flashed_messages() %}
+                <h2> {{message}} </h2>
+            {% endfor %}
+            <h2> {{message}} </h2>
+            <br>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
